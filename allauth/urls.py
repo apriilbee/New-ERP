@@ -1,9 +1,8 @@
 from django.conf.urls import url, include
 from allauth.compat import importlib
-
 from allauth.socialaccount import providers
-
 from . import app_settings
+from django.contrib.sites.models import Site
 
 urlpatterns = [url('^', include('allauth.account.urls'))]
 

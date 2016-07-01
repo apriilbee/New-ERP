@@ -16,6 +16,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # app path
 APP_PATH = os.path.dirname(os.path.abspath(__file__))
+LOGIN_REDIRECT_URL = '/home'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -25,6 +27,8 @@ SECRET_KEY = 'gq^z7ybw%0r&(x^n3po*$rvubv@)emqjja##hm8@p32gj=ef00'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 ALLOWED_HOSTS = []
 
@@ -47,10 +51,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 
-
     # my applications
     'web_app',
 ]
+SITE_ID = 2
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
