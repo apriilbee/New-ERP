@@ -1,10 +1,13 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %}
   ERPNEXT
 {% endblock %}
 
 {% block content %}
+  <script src="{% static 'web_app/js/functions.js' %}"></script>
+
   Erpnext Website
-  <button onclick="createSite()">Click me</button>
+  <button onclick="createSite()">CREATE NEW SITE</button>
 {% endblock %}
