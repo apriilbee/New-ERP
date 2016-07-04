@@ -9,3 +9,7 @@ from django.contrib.auth.models import User
 class HomeView(View):
     def get(self,request):
         return render(request,"home.html")
+
+class IndexView(View):
+    def get(self,request):
+        return render(request,"index.html")
