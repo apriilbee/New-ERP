@@ -14,7 +14,7 @@ create_database(){
 }
 
 set_app(){
-  git clone https://github.com/aprildaebation/ERP_Project.git
+  git clone https://gitlab.com/modernmachines/ERP_Project.git
   cd ~/ERP_Project
   pip install -r requirements.txt
   echo "Done installing requirements"
