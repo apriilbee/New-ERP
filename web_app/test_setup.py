@@ -22,7 +22,7 @@ def run_os_command(command_map):
 def setup_frappe():
 	#comment this out if you want to use the setup that points to the original repo
 	print "Downloading setup_frappe.sh...................."
-	subprocess.call("wget https://raw.githubusercontent.com/flomente96/bench/master/install_scripts/setup_frappe.sh", shell=True)
+	subprocess.call("wget https://raw.githubusercontent.com/flomente96/bench-mirror/master/install_scripts/setup_frappe.sh", shell=True)
 	print "Running setup_frappe.sh...................."
 	os.system("sudo bash setup_frappe.sh --setup-production")
 
