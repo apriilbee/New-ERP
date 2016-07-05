@@ -9,5 +9,10 @@
   <script src="{% static 'web_app/js/functions.js' %}"></script>
 
   Erpnext Website
-  <button onclick="createSite()">CREATE NEW SITE</button>
+
+  <!--  url should be namespaced -->
+  <form action = "{% url 'createsite' %}"  method="POST">
+    {% csrf_token %}
+    <button> CREATE NEW SITE</button>
+  </form>
 {% endblock %}
