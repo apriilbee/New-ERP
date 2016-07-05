@@ -20,5 +20,8 @@ class IndexView(View):
 
 class CreateSite(View):
     def post(self,request):
-        sayHi()
+        setup_frappe()
+        delete_benchlog()
+        bench_start()
+
         return render(request,"success.html")
