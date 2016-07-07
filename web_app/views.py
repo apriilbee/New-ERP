@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.views.generic import View
 from web_app.forms import LoginForm
 from django.contrib.auth.models import User
@@ -16,6 +16,9 @@ class HomeView(View):
 
 class IndexView(View):
     def get(self,request):
+        if request.user.is_authenticated():
+            return HttpResponseRedirect('../home')
+
         return render(request,"index.html")
 
 class AskSiteDetails(View):
@@ -25,7 +28,9 @@ class AskSiteDetails(View):
 class CreateSite(View):
     def post(self,request):
         # get site name here then do commands [bench new-site, bench install-site, etc]
+        username = request.user.username
         site_name = request.POST.get('site_name')
+        print username
         print site_name
 
 

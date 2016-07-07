@@ -9,6 +9,14 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+# user-defined models
+class User_Sites(models.Model):
+    username = models.CharField(unique=True, max_length=254)
+    site_name = models.CharField(unique=True, max_length=254)
+    db_name = models.CharField(unique=True, max_length=254)
+
+
+# ----------------------------
 
 class AccountEmailaddress(models.Model):
     email = models.CharField(unique=True, max_length=254)
