@@ -20,7 +20,7 @@ create_database(){
 }
 
 set_app(){
-  git clone https://gitlab.com/modernmachines/ERP_Project.git
+  # git clone https://gitlab.com/modernmachines/ERP_Project.git
   cd ~/ERP_Project
   pip install -r requirements.txt
   echo "Done installing requirements"
@@ -50,6 +50,7 @@ main(){
   set_app
   configure_django_db
   create_superuser
+  echo "Applying database configurations..."
   mysql -u Administrator -p erpnext_django < erpnext_django.sql
 }
 main $@
