@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^home/',HomeView.as_view(),name='home'),
     url(r'^success/',CreateSite.as_view(),name='createsite'),
     url(r'^createsite/',AskSiteDetails.as_view(),name='asksitedetails'),
+    url(r'^access_site/',AccessSite.as_view(),name='access_site'),
 ]

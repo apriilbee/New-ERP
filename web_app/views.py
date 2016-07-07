@@ -8,6 +8,11 @@ from django.contrib.auth.models import User
 # test_setup is the deploy script for the ERPNext app
 from test_setup import *
 
+# import os
+import os
+
+# import models
+from web_app.models import User_Sites
 
 # Create your views here.
 class HomeView(View):
@@ -25,20 +30,54 @@ class AskSiteDetails(View):
     def get(self,request):
         return render(request,"createsite.html")
 
+class AccessSite(View):
+    def post(self,request):
+        # site = User_Sites.objects.filter(user=request.user.username)
+        # print site
+        os.system("bench use new_erpsite")
+        os.system("bench --site new_erpsite serve --port 8005")
+        return render(request,"home.html")
+
 class CreateSite(View):
     def post(self,request):
-        # get site name here then do commands [bench new-site, bench install-site, etc]
         username = request.user.username
         site_name = request.POST.get('site_name')
-        print username
-        print site_name
+        create(username,site_name)
 
-
-        # if success,
-        #   cd frappe_bench/sites/site_name
-        #   open site_config && get db_name
-        #   make query: add user_id, db_name, and site_name to user_site then return:
+        # if successful
         return render(request,"success.html")
 
         # else if not success:
             # throw exception or something
+
+def create(username, site_name):
+    import re
+    newsite = "bench new-site " + site_name
+    installapp = "bench --site "+ site_name + " install-app erpnext"
+
+    # NOTETHIS: check if site_name already exists
+    print "Creating new site.."
+    os.system(newsite)
+    print "Installing erpnext to site.."
+    os.system(installapp)
+
+    # get database name from site_config.json of new site
+    old_dir = os.getcwd()
+    path = '/home/testuser/frappe-bench/sites/'+ site_name
+    os.chdir(path)
+    print os.getcwd()
+    with open('site_config.json') as f:
+        content = f.readlines()
+    tmp = content[1].strip()
+    tmp = tmp.split(":")[1]
+    db_name = re.sub('\W+','',tmp)
+    os.chdir(old_dir)
+
+    # add site to database, mapped to owner
+    newsite = User_Sites()
+    newsite.username = username
+    newsite.db_name = db_name
+    newsite.site_name = site_name
+    newsite.save()
+
+    print "Done!"

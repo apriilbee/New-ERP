@@ -15,4 +15,10 @@
     {% csrf_token %}
     <button> CREATE NEW SITE</button>
   </form>
+
+  <form action = "{% url 'access_site' %}"  method="POST">
+    {% csrf_token %}
+    <button>ACCESS SITE</button>
+  </form>
+
 {% endblock %}
