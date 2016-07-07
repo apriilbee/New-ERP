@@ -18,10 +18,22 @@ class IndexView(View):
     def get(self,request):
         return render(request,"index.html")
 
+class AskSiteDetails(View):
+    def get(self,request):
+        return render(request,"createsite.html")
+
 class CreateSite(View):
     def post(self,request):
-        setup_frappe()
-        delete_benchlog()
-        bench_start()
+        # get site name here then do commands [bench new-site, bench install-site, etc]
+        site_name = request.POST.get('site_name')
+        print site_name
 
+
+        # if success,
+        #   cd frappe_bench/sites/site_name
+        #   open site_config && get db_name
+        #   make query: add user_id, db_name, and site_name to user_site then return:
         return render(request,"success.html")
+
+        # else if not success:
+            # throw exception or something

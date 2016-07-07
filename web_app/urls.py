@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^$',IndexView.as_view(),name='index'),
     url(r'^home/',HomeView.as_view(),name='home'),
-    url(r'^createsite/',CreateSite.as_view(),name='createsite')
+    url(r'^success/',CreateSite.as_view(),name='createsite'),
+    url(r'^createsite/',AskSiteDetails.as_view(),name='asksitedetails'),
 ]

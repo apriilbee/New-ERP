@@ -9,10 +9,13 @@
   <script src="{% static 'web_app/js/functions.js' %}"></script>
 
   Erpnext Website
-
+  <br><br><br>
+  
   <!--  url should be namespaced -->
-  <form action = "{% url 'asksitedetails' %}"  method="GET">
+  <form action = "{% url 'createsite' %}"  method="POST">
     {% csrf_token %}
-    <button> CREATE NEW SITE</button>
+    SITE NAME: <input type = "text" name = "site_name">
+    <!-- add other fields needed in terminal -->
+    <button>GO</button>
   </form>
 {% endblock %}
