@@ -32,11 +32,22 @@ class AskSiteDetails(View):
 
 class AccessSite(View):
     def post(self,request):
-        # site = User_Sites.objects.filter(user=request.user.username)
-        # print site
-        os.system("bench use new_erpsite")
-        os.system("bench --site new_erpsite serve --port 8005")
-        return render(request,"home.html")
+        try:
+            site = User_Sites.objects.filter(username=request.user.username)
+            print site.get().site_name
+
+            cmd = "bench use " + site.get().site_name
+            os.system(cmd)
+            cmd = "bench --site " + site.get().site_name + " serve --port 8005"
+            os.system(cmd)
+
+            import webbrowser
+            webbrowser.open('http://localhost:8005/')
+
+            return render(request,"home.html")
+        except:
+            print "no site"
+            return render(request,"home.html")
 
 class CreateSite(View):
     def post(self,request):
