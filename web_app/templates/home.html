@@ -11,14 +11,18 @@
   Erpnext Website
 
   <!--  url should be namespaced -->
-  <form action = "{% url 'asksitedetails' %}"  method="GET">
-    {% csrf_token %}
-    <button> CREATE NEW SITE</button>
-  </form>
 
+{{status}}
+{% if not status %}
+  <form action = "{% url 'asksitedetails' %}"  method="GET">
+      {% csrf_token %}
+      <button> CREATE NEW SITE</button>
+  </form>
+{% elif status%}
   <form action = "{% url 'access_site' %}"  method="POST">
     {% csrf_token %}
     <button>ACCESS SITE</button>
+    <a href="http://0.0.0.0:8500/"> Link here </a>
   </form>
-
+{%endif%}
 {% endblock %}

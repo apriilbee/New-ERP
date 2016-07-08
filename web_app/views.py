@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import View
 from web_app.forms import LoginForm
 from django.contrib.auth.models import User
+from django.template import Context, Template
 # from web_app.models import ERP_User
 
 # test_setup is the deploy script for the ERPNext app
@@ -17,7 +18,14 @@ from web_app.models import User_Sites
 # Create your views here.
 class HomeView(View):
     def get(self,request):
-        return render(request,"home.html")
+        context={}
+        context['status'] = User_Sites.objects.filter(username=request.user.username).exists()
+        return render(self.request,"home.html",context=context)
+
+    def check_site_exists(self,request):
+        exists = User_Sites.objects.filter(username=request.user.username).exists()
+        return {'exists':exists}
+
 
 class IndexView(View):
     def get(self,request):
@@ -32,21 +40,12 @@ class AskSiteDetails(View):
 
 class AccessSite(View):
     def post(self,request):
-        try:
-            site = User_Sites.objects.filter(username=request.user.username)
-            print site.get().site_name
-
+            site =  User_Sites.objects.filter(username=request.user.username)
             cmd = "bench use " + site.get().site_name
             os.system(cmd)
-            cmd = "bench --site " + site.get().site_name + " serve --port 8005"
+            cmd = "bench --site " + site.get().site_name + " serve --port 8500"
             os.system(cmd)
-
-            import webbrowser
-            webbrowser.open('http://localhost:8005/')
-
-            return render(request,"home.html")
-        except:
-            print "no site"
+            
             return render(request,"home.html")
 
 class CreateSite(View):
