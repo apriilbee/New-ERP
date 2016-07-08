@@ -1,17 +1,11 @@
 #!/bin/bash
-exists()
-{
-  command -v "$1" >/dev/null 2>&1
-}
 
 get_mariadb(){
-  echo "Installing MariaDB...."
   sudo apt-get update
   sudo apt-get install python-pip python-dev mariadb-server libmariadbclient-dev libssl-dev
   sudo mysql_secure_installation
 }
 create_database(){
-  echo "Creating database for erpnext_django..."
   mysql -u root -p -e "CREATE DATABASE erpnext_django CHARACTER SET UTF8;
   CREATE USER Administrator@localhost IDENTIFIED BY 'password';
   GRANT ALL PRIVILEGES ON erpnext_django.* TO Administrator@localhost;
@@ -20,14 +14,13 @@ create_database(){
 }
 
 set_app(){
-  # git clone https://gitlab.com/modernmachines/ERP_Project.git
   cd ~/ERP_Project
   pip install -r requirements.txt
   echo "Done installing requirements"
 }
 
 configure_django_db(){
-  # cd ~/ERP_Project
+    # cd ~/ERP_Project
   echo "$PWD"
   echo "Making migrations...."
   python manage.py makemigrations
@@ -40,17 +33,20 @@ create_superuser(){
   python manage.py createsuperuser
 }
 
+install_frappe(){
+  echo "$PWD"
+  cd ..
+  wget https://raw.githubusercontent.com/flomente96/bench-mirror/master/install_scripts/setup_frappe.sh
+  sudo bash setup_frappe.sh --setup-production
+}
+
 main(){
-  if exists mysql; then
-    echo "MySQL already exists"
-  else
-    get_mariadb
-  fi
+  get_mariadb
   create_database
   set_app
   configure_django_db
   create_superuser
-  echo "Applying database configurations..."
   mysql -u Administrator -p erpnext_django < erpnext_django.sql
+  install_frappe
 }
 main $@
