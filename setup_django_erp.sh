@@ -45,7 +45,8 @@ main(){
   create_database
   set_app
   configure_django_db
-  create_superuser
+  # upon installation, this app already has a django superuser [username: Administrator, password: password123]
+  # create_superuser
   mysql -u Administrator -p erpnext_django < erpnext_django.sql
   install_frappe
 }
