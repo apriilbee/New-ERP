@@ -41,7 +41,6 @@ CREATE TABLE `account_emailaddress` (
 
 LOCK TABLES `account_emailaddress` WRITE;
 /*!40000 ALTER TABLE `account_emailaddress` DISABLE KEYS */;
-INSERT INTO `account_emailaddress` VALUES (1,'adaecb@gmail.com',0,0,1),(2,'jycabigas@up.edu.ph',0,1,6),(3,'cccahutay@up.edu.ph',0,1,7),(4,'acbation@up.edu.ph',0,1,8),(5,'dcbation@gmail.com',0,1,9),(6,'frlomente@up.edu.ph',0,1,10);
 /*!40000 ALTER TABLE `account_emailaddress` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +140,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +149,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add er p_ user',7,'add_erp_user'),(20,'Can change er p_ user',7,'change_erp_user'),(21,'Can delete er p_ user',7,'delete_erp_user'),(22,'Can add site',8,'add_site'),(23,'Can change site',8,'change_site'),(24,'Can delete site',8,'delete_site'),(25,'Can add email address',9,'add_emailaddress'),(26,'Can change email address',9,'change_emailaddress'),(27,'Can delete email address',9,'delete_emailaddress'),(28,'Can add email confirmation',10,'add_emailconfirmation'),(29,'Can change email confirmation',10,'change_emailconfirmation'),(30,'Can delete email confirmation',10,'delete_emailconfirmation'),(31,'Can add social application',11,'add_socialapp'),(32,'Can change social application',11,'change_socialapp'),(33,'Can delete social application',11,'delete_socialapp'),(34,'Can add social account',12,'add_socialaccount'),(35,'Can change social account',12,'change_socialaccount'),(36,'Can delete social account',12,'delete_socialaccount'),(37,'Can add social application token',13,'add_socialtoken'),(38,'Can change social application token',13,'change_socialtoken'),(39,'Can delete social application token',13,'delete_socialtoken');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(22,'Can add site',8,'add_site'),(23,'Can change site',8,'change_site'),(24,'Can delete site',8,'delete_site'),(25,'Can add email address',9,'add_emailaddress'),(26,'Can change email address',9,'change_emailaddress'),(27,'Can delete email address',9,'delete_emailaddress'),(28,'Can add email confirmation',10,'add_emailconfirmation'),(29,'Can change email confirmation',10,'change_emailconfirmation'),(30,'Can delete email confirmation',10,'delete_emailconfirmation'),(31,'Can add social application',11,'add_socialapp'),(32,'Can change social application',11,'change_socialapp'),(33,'Can delete social application',11,'delete_socialapp'),(34,'Can add social account',12,'add_socialaccount'),(35,'Can change social account',12,'change_socialaccount'),(36,'Can delete social account',12,'delete_socialaccount'),(37,'Can add social application token',13,'add_socialtoken'),(38,'Can change social application token',13,'change_socialtoken'),(39,'Can delete social application token',13,'delete_socialtoken'),(40,'Can add account emailaddress',14,'add_accountemailaddress'),(41,'Can change account emailaddress',14,'change_accountemailaddress'),(42,'Can delete account emailaddress',14,'delete_accountemailaddress'),(43,'Can add account emailconfirmation',15,'add_accountemailconfirmation'),(44,'Can change account emailconfirmation',15,'change_accountemailconfirmation'),(45,'Can delete account emailconfirmation',15,'delete_accountemailconfirmation'),(46,'Can add auth group',16,'add_authgroup'),(47,'Can change auth group',16,'change_authgroup'),(48,'Can delete auth group',16,'delete_authgroup'),(49,'Can add auth group permissions',17,'add_authgrouppermissions'),(50,'Can change auth group permissions',17,'change_authgrouppermissions'),(51,'Can delete auth group permissions',17,'delete_authgrouppermissions'),(52,'Can add auth permission',18,'add_authpermission'),(53,'Can change auth permission',18,'change_authpermission'),(54,'Can delete auth permission',18,'delete_authpermission'),(55,'Can add auth user',19,'add_authuser'),(56,'Can change auth user',19,'change_authuser'),(57,'Can delete auth user',19,'delete_authuser'),(58,'Can add auth user groups',20,'add_authusergroups'),(59,'Can change auth user groups',20,'change_authusergroups'),(60,'Can delete auth user groups',20,'delete_authusergroups'),(61,'Can add auth user user permissions',21,'add_authuseruserpermissions'),(62,'Can change auth user user permissions',21,'change_authuseruserpermissions'),(63,'Can delete auth user user permissions',21,'delete_authuseruserpermissions'),(64,'Can add django admin log',22,'add_djangoadminlog'),(65,'Can change django admin log',22,'change_djangoadminlog'),(66,'Can delete django admin log',22,'delete_djangoadminlog'),(67,'Can add django content type',23,'add_djangocontenttype'),(68,'Can change django content type',23,'change_djangocontenttype'),(69,'Can delete django content type',23,'delete_djangocontenttype'),(70,'Can add django migrations',24,'add_djangomigrations'),(71,'Can change django migrations',24,'change_djangomigrations'),(72,'Can delete django migrations',24,'delete_djangomigrations'),(73,'Can add django session',25,'add_djangosession'),(74,'Can change django session',25,'change_djangosession'),(75,'Can delete django session',25,'delete_djangosession'),(76,'Can add django site',26,'add_djangosite'),(77,'Can change django site',26,'change_djangosite'),(78,'Can delete django site',26,'delete_djangosite'),(79,'Can add socialaccount socialaccount',27,'add_socialaccountsocialaccount'),(80,'Can change socialaccount socialaccount',27,'change_socialaccountsocialaccount'),(81,'Can delete socialaccount socialaccount',27,'delete_socialaccountsocialaccount'),(82,'Can add socialaccount socialapp',28,'add_socialaccountsocialapp'),(83,'Can change socialaccount socialapp',28,'change_socialaccountsocialapp'),(84,'Can delete socialaccount socialapp',28,'delete_socialaccountsocialapp'),(85,'Can add socialaccount socialapp sites',29,'add_socialaccountsocialappsites'),(86,'Can change socialaccount socialapp sites',29,'change_socialaccountsocialappsites'),(87,'Can delete socialaccount socialapp sites',29,'delete_socialaccountsocialappsites'),(88,'Can add socialaccount socialtoken',30,'add_socialaccountsocialtoken'),(89,'Can change socialaccount socialtoken',30,'change_socialaccountsocialtoken'),(90,'Can delete socialaccount socialtoken',30,'delete_socialaccountsocialtoken'),(91,'Can add web app erp user',31,'add_webapperpuser'),(92,'Can change web app erp user',31,'change_webapperpuser'),(93,'Can delete web app erp user',31,'delete_webapperpuser'),(94,'Can add user_ sites',32,'add_user_sites'),(95,'Can change user_ sites',32,'change_user_sites'),(96,'Can delete user_ sites',32,'delete_user_sites');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,7 +174,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +183,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$24000$ENBSkHEv7AQ7$KByg3F9lR0JYkg6BbeeyxG9icfULYPWePD8yCP3K+9U=','2016-07-04 08:55:40.118733',1,'Administrator','','','adaecb@gmail.com',1,1,'2016-06-30 18:57:26.442254'),(5,'pbkdf2_sha256$24000$ZCmbz8DQbHqb$19029fQ1d1KiOTofL/NM6C3+sqt41I7BIRNNSPDmhGo=','2016-07-04 08:40:11.237020',0,'fayelomente','Faye ','Lomente','flomente96@gmail.com',0,1,'2016-06-30 19:33:55.727264'),(6,'pbkdf2_sha256$24000$LQ8HXJQGOhiX$Pw2Xuj0qlJxe9/zsWEXoLtmSTX/Kr40IMiJ/VfY3Abc=','2016-07-05 02:11:27.497522',0,'jessamae','','','jycabigas@up.edu.ph',0,1,'2016-07-01 03:43:51.499525'),(7,'pbkdf2_sha256$24000$uk4G3h1nEFQI$tENMrz6j14fnxSmzOOIsko7AkQ5EmQFTfb76LYh+02Q=','2016-07-01 04:10:19.900251',0,'czarinarae','','','cccahutay@up.edu.ph',0,1,'2016-07-01 04:08:45.171238'),(8,'pbkdf2_sha256$24000$7XalFrMmMjDB$THESW7Sd4gtyVNpIHV5yArGqkkxK4ddPETe3gHgVMbI=','2016-07-01 04:11:57.093260',0,'aprildaebation','','','acbation@up.edu.ph',0,1,'2016-07-01 04:11:07.322687'),(9,'pbkdf2_sha256$24000$vpqwnNR5KHct$vKTTVsMRTGXX8csqQkjZWg9PFv5zDDfHrdd26HhoDDw=','2016-07-01 04:15:48.772877',0,'deliabation','','','dcbation@gmail.com',0,1,'2016-07-01 04:15:48.374268'),(10,'pbkdf2_sha256$24000$RZ2eGJhgPK8v$JPTJIAun2FU7BTamao6tJr/OWP2opm4qJD2nec2lqxk=','2016-07-01 07:26:36.664897',0,'faye','','','frlomente@up.edu.ph',0,1,'2016-07-01 07:25:50.047042');
+INSERT INTO `auth_user` VALUES (14,'pbkdf2_sha256$24000$mSxvSdmfL09t$Ko9oyLCXTbayao/8n/6Mu2Mt5SDwzvQJ4qGwm7XZCUQ=','2016-07-08 06:09:37.611203',1,'Administrator','','','',1,1,'2016-07-08 06:09:21.449855');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +264,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,7 +273,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2016-06-30 19:29:43.189481','2','jessamae',3,'',4,1),(2,'2016-06-30 19:33:49.281751','3','fayelomente',3,'',4,1),(3,'2016-07-01 02:27:33.022907','2','facebook.com',1,'Added.',8,1),(4,'2016-07-01 02:47:31.911647','1','Facebook',1,'Added.',11,1),(5,'2016-07-01 03:22:42.368079','2','facebook.com',2,'No fields changed.',8,1),(6,'2016-07-01 03:25:16.760530','1','Facebook',2,'No fields changed.',11,1),(7,'2016-07-01 03:25:28.886624','1','Facebook',2,'Changed sites.',11,1),(8,'2016-07-01 03:25:35.054091','1','Facebook',2,'No fields changed.',11,1),(9,'2016-07-01 03:30:45.523362','1','Facebook',2,'Changed secret.',11,1),(10,'2016-07-01 03:45:05.032675','2','ERP_User object',3,'',7,1);
+INSERT INTO `django_admin_log` VALUES (29,'2016-07-08 06:10:17.558306','2','User_Sites object',3,'',32,14);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,7 +290,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,7 +299,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (9,'account','emailaddress'),(10,'account','emailconfirmation'),(1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(8,'sites','site'),(12,'socialaccount','socialaccount'),(11,'socialaccount','socialapp'),(13,'socialaccount','socialtoken'),(7,'web_app','erp_user');
+INSERT INTO `django_content_type` VALUES (9,'account','emailaddress'),(10,'account','emailconfirmation'),(1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(8,'sites','site'),(12,'socialaccount','socialaccount'),(11,'socialaccount','socialapp'),(13,'socialaccount','socialtoken'),(14,'web_app','accountemailaddress'),(15,'web_app','accountemailconfirmation'),(16,'web_app','authgroup'),(17,'web_app','authgrouppermissions'),(18,'web_app','authpermission'),(19,'web_app','authuser'),(20,'web_app','authusergroups'),(21,'web_app','authuseruserpermissions'),(22,'web_app','djangoadminlog'),(23,'web_app','djangocontenttype'),(24,'web_app','djangomigrations'),(25,'web_app','djangosession'),(26,'web_app','djangosite'),(27,'web_app','socialaccountsocialaccount'),(28,'web_app','socialaccountsocialapp'),(29,'web_app','socialaccountsocialappsites'),(30,'web_app','socialaccountsocialtoken'),(32,'web_app','user_sites'),(31,'web_app','webapperpuser');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,7 +316,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +325,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-06-30 18:45:19.605693'),(2,'auth','0001_initial','2016-06-30 18:45:27.432901'),(3,'admin','0001_initial','2016-06-30 18:45:29.151886'),(4,'admin','0002_logentry_remove_auto_add','2016-06-30 18:45:29.275965'),(5,'contenttypes','0002_remove_content_type_name','2016-06-30 18:45:30.361800'),(6,'auth','0002_alter_permission_name_max_length','2016-06-30 18:45:31.024046'),(7,'auth','0003_alter_user_email_max_length','2016-06-30 18:45:31.922033'),(8,'auth','0004_alter_user_username_opts','2016-06-30 18:45:31.982742'),(9,'auth','0005_alter_user_last_login_null','2016-06-30 18:45:32.580720'),(10,'auth','0006_require_contenttypes_0002','2016-06-30 18:45:32.636798'),(11,'auth','0007_alter_validators_add_error_messages','2016-06-30 18:45:32.702037'),(12,'sessions','0001_initial','2016-06-30 18:45:33.229770'),(13,'web_app','0001_initial','2016-06-30 18:45:33.525102'),(14,'web_app','0002_auto_20160630_1802','2016-06-30 18:45:33.851979'),(15,'web_app','0003_erp_user_user','2016-06-30 18:54:26.463962'),(16,'web_app','0004_remove_erp_user_user','2016-06-30 18:54:26.969437'),(17,'web_app','0005_delete_erp_user','2016-06-30 18:54:27.147880'),(18,'web_app','0006_erp_user','2016-06-30 18:59:43.671183'),(19,'web_app','0007_erp_user_email','2016-06-30 19:15:00.296175'),(20,'account','0001_initial','2016-07-01 02:09:41.040104'),(21,'account','0002_email_max_length','2016-07-01 02:09:41.847437'),(22,'sites','0001_initial','2016-07-01 02:09:42.261727'),(23,'sites','0002_alter_domain_unique','2016-07-01 02:09:42.496645'),(24,'socialaccount','0001_initial','2016-07-01 02:09:47.978083'),(25,'socialaccount','0002_token_max_lengths','2016-07-01 02:09:51.114092'),(26,'socialaccount','0003_extra_data_default_dict','2016-07-01 02:09:51.197468');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-06-30 18:45:19.605693'),(2,'auth','0001_initial','2016-06-30 18:45:27.432901'),(3,'admin','0001_initial','2016-06-30 18:45:29.151886'),(4,'admin','0002_logentry_remove_auto_add','2016-06-30 18:45:29.275965'),(5,'contenttypes','0002_remove_content_type_name','2016-06-30 18:45:30.361800'),(6,'auth','0002_alter_permission_name_max_length','2016-06-30 18:45:31.024046'),(7,'auth','0003_alter_user_email_max_length','2016-06-30 18:45:31.922033'),(8,'auth','0004_alter_user_username_opts','2016-06-30 18:45:31.982742'),(9,'auth','0005_alter_user_last_login_null','2016-06-30 18:45:32.580720'),(10,'auth','0006_require_contenttypes_0002','2016-06-30 18:45:32.636798'),(11,'auth','0007_alter_validators_add_error_messages','2016-06-30 18:45:32.702037'),(12,'sessions','0001_initial','2016-06-30 18:45:33.229770'),(13,'web_app','0001_initial','2016-06-30 18:45:33.525102'),(14,'web_app','0002_auto_20160630_1802','2016-06-30 18:45:33.851979'),(15,'web_app','0003_erp_user_user','2016-06-30 18:54:26.463962'),(16,'web_app','0004_remove_erp_user_user','2016-06-30 18:54:26.969437'),(17,'web_app','0005_delete_erp_user','2016-06-30 18:54:27.147880'),(18,'web_app','0006_erp_user','2016-06-30 18:59:43.671183'),(19,'web_app','0007_erp_user_email','2016-06-30 19:15:00.296175'),(20,'account','0001_initial','2016-07-01 02:09:41.040104'),(21,'account','0002_email_max_length','2016-07-01 02:09:41.847437'),(22,'sites','0001_initial','2016-07-01 02:09:42.261727'),(23,'sites','0002_alter_domain_unique','2016-07-01 02:09:42.496645'),(24,'socialaccount','0001_initial','2016-07-01 02:09:47.978083'),(25,'socialaccount','0002_token_max_lengths','2016-07-01 02:09:51.114092'),(26,'socialaccount','0003_extra_data_default_dict','2016-07-01 02:09:51.197468'),(27,'web_app','0008_auto_20160706_1045','2016-07-06 10:45:57.823975'),(28,'web_app','0008_auto_20160707_1137','2016-07-07 18:35:43.316740'),(29,'web_app','0009_auto_20160707_1334','2016-07-07 18:35:43.427900'),(30,'web_app','0010_user_sites','2016-07-07 18:35:43.472463'),(31,'web_app','0011_auto_20160707_1828','2016-07-07 18:35:43.517207'),(32,'web_app','0012_auto_20160707_1832','2016-07-07 18:35:43.584122'),(33,'web_app','0013_auto_20160707_1834','2016-07-07 18:35:43.684262');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -352,7 +351,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('3qr2d1am747x1skobpc14hvsf3fkuwqj','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-18 08:56:16.246917'),('a2lsqgic5dl8ma2vh1357d055ojgwopk','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-19 02:11:27.870093'),('dawhz5zotl01xoab2cuw9pbp5llq8sot','NGVkMzM5MzI1Y2VhMTI0MGQyOTRjZTM2Y2U4ZjI0NGYxYWJlMjhjNzp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiYjU2YTIzZjhkNGYzMTZhZWQzZDY3NDA4ZGEzM2FiNWJiNTljYjMxMyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEwIn0=','2016-07-15 07:26:36.701394'),('vj5jfu4se1mpyefzy8kstslwp6jpaqcq','ZjNjZTBkMzBjMGI5M2I0MzZkMzA5MDRkNGU0NmU3YzUyMTZhOWRjMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiMGQ0NmRmYmM5ZmZkNTJjYjVkZGFiZmI0YTdkYWY5NzAyOGNhYWI1NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjUifQ==','2016-07-18 08:40:11.273487'),('xfk3iuafg8zrikggoytproijl7rl6r6x','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-19 02:06:43.910062');
+INSERT INTO `django_session` VALUES ('37ebb24kmdhm5cs9eht7dx1sz7vjr3px','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-22 06:01:29.920813'),('3qr2d1am747x1skobpc14hvsf3fkuwqj','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-18 08:56:16.246917'),('5oyjm7a4zf99an6dzfzyrimw3330qct6','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-20 10:50:17.686866'),('7a5chmfjz22fmao409c7jfb7gogom7tw','Y2E5YzRjNjhhNDk1ZDA3NDBhZDUwMDUwN2ZhMzgwNmZmZWM4N2Y3NDp7Il9hdXRoX3VzZXJfaGFzaCI6IjY1MTMzYmIxYzYyYjQ0MTY3YTI3NDc1ZGY0NTZlNmU1ODkzYjZmOTUiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2016-07-21 13:36:04.300862'),('8x92vrp0l4hjdz2b4rbsnt93p0iq1zmm','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-21 19:02:38.363838'),('9zer0j5yhsklmo2d1dwr87z5oxbj6cr4','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-22 03:21:47.777830'),('a2lsqgic5dl8ma2vh1357d055ojgwopk','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-19 02:11:27.870093'),('dawhz5zotl01xoab2cuw9pbp5llq8sot','NGVkMzM5MzI1Y2VhMTI0MGQyOTRjZTM2Y2U4ZjI0NGYxYWJlMjhjNzp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiYjU2YTIzZjhkNGYzMTZhZWQzZDY3NDA4ZGEzM2FiNWJiNTljYjMxMyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEwIn0=','2016-07-15 07:26:36.701394'),('gje4059b114wfwf0l6q43hxg6tmzd4mf','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-21 18:56:47.052691'),('mzwkzfx0d512aiad6xxntorw9am3ix78','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-21 05:32:43.684832'),('tpkinh8s4aii4479fse3gcbh6vv1yvjh','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-22 01:58:26.729418'),('uzqz8j6btcdfe3020upnaludlc8hqvkf','YWU5YTk5NDAwOTRlNjJmYTUwMzlmNDU2NTJjNWVhODc4MzZkYzE2Zjp7Il9hdXRoX3VzZXJfaGFzaCI6ImEzNThkZWY2ZjFiNzgyYmM3Mjg1OGQwNjYwZDM3NWU1ZjM1ZmFhOWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxNCJ9','2016-07-22 06:09:37.706379'),('vj5jfu4se1mpyefzy8kstslwp6jpaqcq','ZjNjZTBkMzBjMGI5M2I0MzZkMzA5MDRkNGU0NmU3YzUyMTZhOWRjMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiMGQ0NmRmYmM5ZmZkNTJjYjVkZGFiZmI0YTdkYWY5NzAyOGNhYWI1NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjUifQ==','2016-07-18 08:40:11.273487'),('x1nbhdv6bgzz45umzxcejrcc7da279kj','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-21 07:56:17.987660'),('xfk3iuafg8zrikggoytproijl7rl6r6x','MzQ1ZGUwYTE1NTc5YTY0N2RkY2FmYzNjODU2ZGMzODBkZDkzOGMyMjp7Il9zZXNzaW9uX2V4cGlyeSI6MCwiX2F1dGhfdXNlcl9oYXNoIjoiZWNhM2E1NzI0MTgwMzgxMTIxYTNlMmYzMzQ5YWZiODI1YmFhZjdiYiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjYifQ==','2016-07-19 02:06:43.910062');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -502,31 +501,31 @@ LOCK TABLES `socialaccount_socialtoken` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `web_app_erp_user`
+-- Table structure for table `web_app_user_sites`
 --
 
-DROP TABLE IF EXISTS `web_app_erp_user`;
+DROP TABLE IF EXISTS `web_app_user_sites`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `web_app_erp_user` (
+CREATE TABLE `web_app_user_sites` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `username` varchar(254) NOT NULL,
+  `site_name` varchar(254) NOT NULL,
+  `db_name` varchar(254) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `user_id` (`user_id`),
-  CONSTRAINT `web_app_erp_user_user_id_bbb39f24_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `site_name` (`site_name`),
+  UNIQUE KEY `db_name` (`db_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `web_app_erp_user`
+-- Dumping data for table `web_app_user_sites`
 --
 
-LOCK TABLES `web_app_erp_user` WRITE;
-/*!40000 ALTER TABLE `web_app_erp_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `web_app_erp_user` ENABLE KEYS */;
+LOCK TABLES `web_app_user_sites` WRITE;
+/*!40000 ALTER TABLE `web_app_user_sites` DISABLE KEYS */;
+/*!40000 ALTER TABLE `web_app_user_sites` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -538,4 +537,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-05 16:08:06
+-- Dump completed on 2016-07-08 14:13:37
